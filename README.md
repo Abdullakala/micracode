@@ -144,6 +144,28 @@ bun run dev:api        # FastAPI only (uvicorn --reload)
 
 Open <http://localhost:3000>, type a project description into the prompt box, and you're off. Full walkthrough in [Getting Started](./docs/getting-started.md).
 
+### Run with Docker
+
+Build the full image (web + API in one container):
+
+```bash
+docker build -t micracode:latest .
+```
+
+Run it:
+
+```bash
+docker run --rm \
+  -p 3000:3000 \
+  -p 8000:8000 \
+  --env-file apps/api/.env \
+  -v micracode-data:/data/opener-apps \
+  micracode:latest
+```
+
+- Web: <http://localhost:3000>
+- API: <http://localhost:8000>
+
 ---
 
 ## 📁 Project Structure
@@ -244,4 +266,3 @@ Contributions are welcome! Feel free to open issues and pull requests.
 ---
 
 **Join our community** [Discord](https://discord.gg/YmBNWhwdg)
-
