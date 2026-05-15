@@ -1,0 +1,355 @@
+# Instincts generated from https://github.com/Abdullakala/micracode
+# Generated: 2026-05-15T23:40:12.065Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: micracode-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix
+
+## Evidence
+
+- 3 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat: add full Docker runtime image for web and API, fix: include unzip dependency for bun install in Docker image
+
+---
+id: micracode-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Commit Length
+
+## Action
+
+Write moderate-length commit messages (~58 characters)
+
+## Evidence
+
+- Average commit message length: 58 chars
+- Based on 3 commits
+
+---
+id: micracode-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: micracode-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: micracode-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: micracode-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: micracode-workflow-docker-environment-setup
+trigger: "when doing docker environment setup"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Abdullakala/micracode
+---
+
+# Micracode Workflow Docker Environment Setup
+
+## Action
+
+Follow the docker-environment-setup workflow:
+1. Edit or add Dockerfile to define runtime image.
+2. Update or add .dockerignore to control Docker build context.
+3. Add or update docker-compose.yml for orchestration.
+4. Add or update environment example files (e.g., .env.docker.example).
+5. Update README.md with instructions.
+6. Optionally update supporting scripts (e.g., docker/start.sh).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Dockerfile, .dockerignore, docker-compose.yml
+
+---
+id: micracode-instinct-camelcase-functions
+trigger: "When writing a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Camelcase Functions
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in codebase: functions consistently use camelCase
+- Naming conventions specified in analysis
+
+---
+id: micracode-instinct-pascalcase-classes
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Pascalcase Classes
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in codebase: classes use PascalCase
+- Naming conventions specified in analysis
+
+---
+id: micracode-instinct-screaming-constants
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Screaming Constants
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in codebase: constants use SCREAMING_SNAKE_CASE
+- Naming conventions specified in analysis
+
+---
+id: micracode-instinct-pascalcase-files
+trigger: "When creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Pascalcase Files
+
+## Action
+
+Name the file using PascalCase
+
+## Evidence
+
+- Pattern in codebase: files use PascalCase
+- Naming conventions specified in analysis
+
+---
+id: micracode-instinct-relative-imports
+trigger: "When importing modules"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codebase: imports are relative
+- Import style specified in analysis
+
+---
+id: micracode-instinct-named-exports
+trigger: "When exporting functions, classes, or values"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Named Exports
+
+## Action
+
+Use named exports instead of default exports
+
+## Evidence
+
+- Pattern in codebase: named exports
+- Export style specified in analysis
+
+---
+id: micracode-instinct-separate-tests
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Separate Tests
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Architecture: testLocation is 'separate'
+- Folder structure in analysis
+
+---
+id: micracode-instinct-conventional-commits
+trigger: "When writing a git commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Conventional Commits
+
+## Action
+
+Format the commit as 'type: description', where type is 'feat' or 'fix'
+
+## Evidence
+
+- Seen in commit: 'feat: add full Docker runtime image for web and API'
+- Seen in commit: 'fix: include unzip dependency for bun install in Docker image'
+- Commit prefixes and format specified in analysis
+
+---
+id: micracode-instinct-commit-length
+trigger: "When writing a git commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Commit Length
+
+## Action
+
+Keep the commit message concise (around 58 characters on average)
+
+## Evidence
+
+- Average commit message length is 58
+- Pattern in commit examples
+
+---
+id: micracode-instinct-docker-env-setup
+trigger: "When setting up or modifying the Docker environment for building and running the app"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: Abdullakala/micracode
+---
+
+# Micracode Instinct Docker Env Setup
+
+## Action
+
+Edit or add Dockerfile, .dockerignore, docker-compose.yml, .env.docker.example, README.md, and optionally docker/start.sh according to the workflow steps
+
+## Evidence
+
+- Workflow 'docker-environment-setup' described in analysis
+- Seen in commit sequence: Dockerfile, .dockerignore, docker-compose.yml, .env.docker.example, README.md, docker/start.sh
+
