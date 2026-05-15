@@ -10,3 +10,4 @@
 apps/web/.next
 *.pyc
 .DS_Store
+.env.docker

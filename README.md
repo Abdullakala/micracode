@@ -144,27 +144,42 @@ bun run dev:api        # FastAPI only (uvicorn --reload)
 
 Open <http://localhost:3000>, type a project description into the prompt box, and you're off. Full walkthrough in [Getting Started](./docs/getting-started.md).
 
-### Run with Docker
+### Run with Docker Compose (recommended)
 
-Build the full image (web + API in one container):
-
-```bash
-docker build -t micracode:latest .
-```
-
-Run it:
+The quickest way to start the full stack — one command builds the image **and** starts both services:
 
 ```bash
-docker run --rm \
-  -p 3000:3000 \
-  -p 8000:8000 \
-  --env-file apps/api/.env \
-  -v micracode-data:/data/opener-apps \
-  micracode:latest
+# 1. Copy and fill in your API key
+cp .env.docker.example .env.docker
+$EDITOR .env.docker          # set GOOGLE_API_KEY (or OPENAI_API_KEY / leave for Ollama)
+
+# 2. Build and start
+docker compose up --build
 ```
 
 - Web: <http://localhost:3000>
 - API: <http://localhost:8000>
+
+To run in the background:
+
+```bash
+docker compose up --build -d
+docker compose logs -f        # tail logs
+docker compose down           # stop and remove containers
+```
+
+#### Run with plain Docker (advanced)
+
+```bash
+docker build -t micracode:latest .
+
+docker run --rm \
+  -p 3000:3000 \
+  -p 8000:8000 \
+  --env-file .env.docker \
+  -v micracode-data:/data/opener-apps \
+  micracode:latest
+```
 
 ---
 
